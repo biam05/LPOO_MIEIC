@@ -1,4 +1,5 @@
 # LPOO - PATTERNS
+### Aula dada na Plataforma Slack por André Restivo - 18-03-2020
 
 ## Design Patterns
 
