@@ -3,17 +3,21 @@
 
 ## Design Patterns
 
-### Slide 1
+![imgid](patterns_slides/Slide1.png)
 
 Hoje vamos finalmente começar a falar sobre uma das componentes mais importantes desta unidade curricular: os **design patterns**.
 
-### Slide 5
+![imgid](patterns_slides/Slide5.png)
 
 Antes de começarmos a falar dos padrões propriamente ditos, um bocado de história.
 
 Em 1977, o arquitecto **Christopher Alexander** escreveu um livro (“A Pattern Language: Towns, Buildings, Construction”) contendo um conjunto de padrões sobre **arquitectura de edíficios e cidades, e design urbano**.
 
 Mas mais do que o conteúdo em si, inventou um novo conceito: o de uma **linguagem de padrões**.
+
+Podemos ver aqui um exemplo de um destes padrões:
+
+![imgid](patterns_slides/livro.png)
 
 Neste livro, cada padrão apresenta um problema comum em arquitectura e uma **solução genérica** para esse problema.
 
@@ -23,7 +27,7 @@ O livro **não** é só um conjunto de receitas, mas uma nova linguagem. Cada pa
 
 Mas vamos ao que interessa :-)
 
-### Slide 6
+![imgid](patterns_slides/Slide6.png)
 
 Em 1994, surge um novo livro, com **forte inspiração** no livro do Christopher Alexander, com o título **“Design Patterns: Elements of Reusable Object-Oriented Software”**.
 
@@ -37,7 +41,7 @@ Este livro, que é considerado um livro fundamental para qualquer engenheiro inf
 
 Juntos os 4 autores são conhecidos como o “Gang of Four” ou apenas **GoF**.
 
-### Slide 7
+![imgid](patterns_slides/Slide7.png)
 
 É fundamental perceber, que estes padrões **não são receitas, bibliotecas**, ou **código** que possa ser simplesmente copiado para os vossos projectos. Mas antes, **sugestões** de como resolver problemas **comuns** e **recorrentes**.
 
@@ -50,7 +54,13 @@ Estes são os 23 padrões descritos pelo GoF. Como podem ver, dividem-se em 3 ca
 + **Estruturais**, que se preocupam com a forma como os objectos são **organizados** e **compostos** de maneira a criar **estruturas** úteis.
 + E **comportamentais**, que se preocupam com a forma como os objectos **interagem** e comunicam.
 
-### Slide 9
+![imgid](patterns_slides/Slide8.png)
+
+Podemos ver como é que os padrões se interligam nesta imagem:
+
+![imgid](patterns_slides/relation.png)
+
+![imgid](patterns_slides/Slide9.png)
 
 A descrição de cada um destes padrões contém os mesmos elementos:
 + **Nome do Padrão**, um elemento fundamental que permite que o padrão se torne parte da linguagem corrente.
@@ -69,13 +79,13 @@ A descrição de cada um destes padrões contém os mesmos elementos:
 + **Padrões Relacionados**, padrões que podem ser usados em alternativa ou em colaboração com este padrão.
 
 
-## Factory Method
+### Factory Method
 
-### Slide 10
+![imgid](patterns_slides/Slide10.png)
 
 Durante esta “_aula_”, vamos explorar 5 padrões diferentes, começando pelo padrão **Factory Method**.
 
-### Slide 11
+![imgid](patterns_slides/Slide11.png)
 
 Podem ver nesse slide a intenção e a motivação de um padrão (ambos resumidos).
 
@@ -99,7 +109,7 @@ A ideia é ser muito simples eu conseguir _extender_ essa framework para um novo
 
 E para isso deixo o método de como criar um novo documento como _abstract_ e quem for extender a framework apenas tem de fazer override a esse método.
 
-### Slide 12
+![imgid](patterns_slides/Slide12.png)
 
 Devemos **usar este padrão** sempre que:
 
@@ -109,7 +119,7 @@ Devemos **usar este padrão** sempre que:
 
 Como **consequência**, deixamos de ter de introduzir conhecimento sobre classes específicas a cada caso de uso, em código que não precisa de as conhecer.
 
-### Slide 13
+![imgid](patterns_slides/Slide13.png)
 
 Isto é a estrutura do padrão tal como está no livro do GoF.
 
@@ -123,7 +133,7 @@ Quando digo usar estes nomes, seria algo do género HeroCreator (por exemplo).
 
 Assim, quem vir o código pode ter uma ideia de que ali está a ser usado um padrão.
 
-### Slide 14
+![imgid](patterns_slides/Slide14.png)
 
 Algumas variações do padrão (só algumas):
 
@@ -133,13 +143,13 @@ Algumas variações do padrão (só algumas):
 
 Isto vai fazendo mais sentido à medida que os formos utilizando. A ideia não é andar a forçar o uso de padrões só porque sim. É ficarem com uma ideia dos que existem e quando se deparam com um problema conseguirem perceber que padrões poderiam eventualmente ser usados para o resolver.
 
-## Composite
+### Composite
 
-### Slide 15
+![imgid](patterns_slides/Slide15.png)
 
-Vamos passar agora ao segundo padrão: o Composite. Este acho que é mais fácil de entender.
+Vamos passar agora ao segundo padrão: o **Composite**. Este acho que é mais fácil de entender.
 
-### Slide 16
+![imgid](patterns_slides/Slide16.png)
 
 Muitas vezes precisamos não só que um objecto **contenha vários objectos** de um determinado tipo, mas que também possa ter **objectos do seu próprio tipo**.
 
@@ -181,7 +191,7 @@ public void move(int deltax, int deltay) {
 }
 ````
 
-### Slide 17
+![imgid](patterns_slides/Slide17.png)
 
 Devemos **usar** este padrão quando:
 
@@ -193,7 +203,7 @@ As **consequências** de usar este padrão são:
 + Os **clientes**, ou seja, quem usa os objectos, ficam mais **simples** porque **não** se têm de **preocupar** com saber se estão a trabalhar com um grupo ou com um objecto isolado.
 + Torna-se **simples** adicionar **novos tipos** de objectos.
 
-### Slide 18
+![imgid](patterns_slides/Slide18.png)
 
 A estrutura abstrata do padrão é similar à do exemplo. A classe **_Client_** representa **qualquer classe** que use a árvore de objectos.
 
@@ -203,7 +213,7 @@ A cada um dos componentes chamamos **_Leaf_**. E ao grupo chamamos **_Composite_
 
 Mas isto são só nomes para nos abstrairmos um bocado de um exemplo em particular.
 
-### Slide 19
+![imgid](patterns_slides/Slide19.png)
 
 Podemos ainda considerar várias **variações** a este padrão:
 + Podemos querer que as _Leafs_ saibam **de que grupo** fazem parte. Pode dar jeito em alguns casos.
@@ -211,13 +221,13 @@ Podemos ainda considerar várias **variações** a este padrão:
 + Pode ser necessário saber a **ordem** dos filhos de um _Composite_.
 + E em alguns casos, pode ser útil poder fazer **_cache_** do resultado de operações. Por exemplo, a classe _Shape_ pode saber calcular a área, e a área de um _Group_ ser a soma das áreas das _Shapes_. Se tivermos uma árvore muito profunda, este cálculo pode tornar-se lento. Mas os _Groups_ podem **guardar** a área das _Shapes_ e só **recalcular** se as _Shapes_ mudarem.
 
-## Command
+### Command
 
-### Slide 20 
+![imgid](patterns_slides/Slide20.png)
 
 Vamos agora ver o próximo padrão que se chama **Command**. Este padrão é extremamente simples mas abre a porta a muitas possibilidades.
 
-### Slide 21
+![imgid](patterns_slides/Slide21.png)
 
 Este padrão usa-se quando queremos encapsular um pedido num objecto de forma a que este possa ser **parametrizável**, que um objecto possa ser parametrizado com um pedido, que os pedidos possam estar numa **lista de espera**, possam ser **repetíveis** ou **desfazíveis** (operação de _undo_), …
 
@@ -253,7 +263,7 @@ Pergunta: Como é que eu posso fazer comandos complexos? Em que cada comando pod
 
 Podemos ter comandos que são uma **composição** de vários comandos. Podemos até juntar este padrão ao padrão **_Composite_** e ter comandos que são **composições de composições** de comandos. As hipóteses são imensas.
 
-### Slide 22
+![imgid](patterns_slides/Slide22.png)
 
 Devemos **usar** este padrão quando:
 
@@ -276,7 +286,7 @@ Os princípio são só isso, princípios.
 
 De vez em quando o nosso problema é que não sabemos como não violar um princípio. E pode ser aí que nos lembramos de um padrão que dá jeito.
 
-### Slide 23
+![imgid](patterns_slides/Slide23.png)
 
 A **estrutura** abstracta deste padrão pode parecer um pouco mais complexa, mas não é. Vamos partir isto em bocados mais simples.
 
@@ -292,7 +302,7 @@ Que até podem ser a mesma.
 
 Reparem que **nenhuma** destas classes (_Client_, _Invoker_ e _Receiver_) tem de **existir**. São só representações **abstractas** de classes que vão existir no vosso código (por exemplo, _MenuItem_ ou _Application_)
 
-### Slide 24
+![imgid](patterns_slides/Slide24.png)
 
 Algumas (só algumas) da variações possíveis para este padrão:
 
@@ -300,9 +310,9 @@ Algumas (só algumas) da variações possíveis para este padrão:
 + Suportar operações de _undo_ e _redo_, acrescentando um método _undo()_ ao comando.
 + Garantir que erros (_bugs_) em undos múltiplos **não** se **propagam** pelos vários undos a serem executados (guardando por exemplo o **estado** do _Receiver_ e recusando-se a fazer _undo_ se o estado for diferente).
 
-## Observer
+### Observer
 
-### Slide 25
+![imgid](patterns_slides/Slide25.png)
 
 Vamos ver agora um dos padrões mais usados em linguagens orientadas a objectos, o padrão **Observer**. Também conhecido como **Listener** ou **Publisher/Subscriber**.
 
@@ -312,7 +322,7 @@ Por exemplo, em Java, quando estamos a fazer aplicações gráficas vão ver mon
 addClickListener(ClickListener listener).
 ````
 
-### Slide 26
+![imgid](patterns_slides/Slide26.png)
 
 Para este padrão vamos ter uma **motivação** um bocado diferente. Em vez de termos um exemplo em UML, imaginem apenas que têm alguns dados (guardados algures numa ou mais classes) e que querem mostrar os **dados** de **formas diferentes** na interface gráfica.
 
@@ -323,7 +333,7 @@ O que acontece se tivermos de acrescentar uma nova classe de visualização. Lá
 Pergunta: Que princípio SOLID está a ser violado neste caso?
 **_Open Close_**
 
-### Slide 28
+![imgid](patterns_slides/Slide28.png)
 
 Como o nosso exemplo não tinha um diagrama UML, desta vez vamos ver primeiro a estrutura do padrão.
 
@@ -360,7 +370,7 @@ E depois fazemos a nossa classe implementar uma interface _ClickListener_ que te
 
 Como somos obrigados a fazer override desse método depois podemos decidir aí o que fazer quando o botão é _clickado_.
 
-### Slide 27
+![imgid](patterns_slides/Slide27.png)
 
 Este padrão **usa-se** quando:
 + Uma abstração tem **dois aspectos** em que um **depende** do outro.
@@ -372,7 +382,7 @@ As **consequências** da utilização deste padrão são:
 + Passa a ser possível ter comunicação por **broadcast**, ou seja, um sujeito notificar facilmente **vários** observadores.
 + Como os observadores não têm conhecimento um dos outros, não existe a noção do **custo/resultado** de actualizar um objecto.
 
-### Slide 29
+![imgid](patterns_slides/Slide29.png)
 
 Variações a este padrão incluem:
 + Observadores que conseguem observar **mais do que um** _subject_.
@@ -382,13 +392,13 @@ Variações a este padrão incluem:
 
 Como podem ver este padrão tem um monte de alternativas. Provavelmente porque era um dos mais usados e de variadas formas.
 
-## Strategy
+### Strategy
 
-### Slide 30
+![imgid](patterns_slides/Slide30.png)
 
 Finalmente o último padrão de hoje: o **Strategy**.
 
-### Slide 31
+![imgid](patterns_slides/Slide31.png)
 
 O padrão **Strategy** permite **encapsular algoritmos** dentro de objectos. Isto permite que o algoritmo usado pelo cliente possa ser **parametrizado** sem ser necessário alterá-lo ou _extendê-lo_.
 
@@ -425,7 +435,7 @@ E com mais parametrização, isto podia explodir.
 
 Por exemplo, no caso do Hero, podiamos ter inimigos parametrizados com estratégias: MoveStrategy, AttackStrategy, ...
 
-### Slide 32
+![imgid](patterns_slides/Slide32.png)
 
 Este padrão deve ser **usado** quando:
 + Muitas classes relacionadas **diferem apenas no algoritmo**.
@@ -441,13 +451,13 @@ As **consequências** de usar este padrão são:
 
 Esse último ponto é um ponto negativo. Obriga ao cliente saber as estratégias internas.
 
-### Slide 33
+![imgid](patterns_slides/Slide33.png)
 
 A **estrutura** abstracta deste padrão, dá o nome de **_Context_** à classe cliente da estratégia.
 Essa classe terá uma forma de lhe ser **passada** a estratégia (por exemplo no constructor) a ser usada e um, ou mais, métodos que **chamam essa estratégia (_ContextInterface()_)**.
 A **estratégia** será uma **classe abstracta** com um método que permite **invocar a estratégia (_AlgorithmInterface()_) e várias subclasses concretas.**
 
-### Slide 34
+![imgid](patterns_slides/Slide34.png)
 
 Em termos de **variações**, a mais importante prende-se com o facto de podermos ter uma **estratégia por omissão** (por exemplo quando é usado o construtor vazio).
 
