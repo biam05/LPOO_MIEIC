@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="StringTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-03-24T16:01:58" hostname="beatriz-Lenovo-Y520-15IKBN" time="0.004">
+<testsuite name="StringTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2020-03-24T17:04:25" hostname="beatriz-Lenovo-Y520-15IKBN" time="0.306">
   <properties/>
+  <testcase name="happyHour" classname="StringTest" time="0.001"/>
   <testcase name="stringReplacer" classname="StringTest" time="0.001"/>
-  <testcase name="transformUndo" classname="StringTest" time="0.001"/>
+  <testcase name="impatientStrategy" classname="StringTest" time="0.001"/>
+  <testcase name="transformUndo" classname="StringTest" time="0.0"/>
   <testcase name="stringDrink" classname="StringTest" time="0.0"/>
+  <testcase name="removeObserver" classname="StringTest" time="0.295"/>
+  <testcase name="smartStrategyStartClosed" classname="StringTest" time="0.001"/>
   <testcase name="stringInverter" classname="StringTest" time="0.0"/>
+  <testcase name="smartStrategyStartOpened" classname="StringTest" time="0.0"/>
+  <testcase name="addObserver" classname="StringTest" time="0.006"/>
+  <testcase name="orderStringRecipe" classname="StringTest" time="0.0"/>
+  <testcase name="transformerGroup" classname="StringTest" time="0.0"/>
+  <testcase name="transformerComposite" classname="StringTest" time="0.0"/>
   <testcase name="stringRecipe" classname="StringTest" time="0.0"/>
   <testcase name="stringCaseChanger" classname="StringTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
