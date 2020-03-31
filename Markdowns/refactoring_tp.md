@@ -171,9 +171,45 @@ Não se esqueçam de sacar o código aqui: https://www.fe.up.pt/~arestivo/page/f
 + _replace conditional with polymorphism_
 + Alguém me mostre um screenshot final do ````GraphicFramework````
 + _Eu transformei shape numa interface criei classes square e circle que implementam shape_
-+ 
 
 ##Exercise 3
+
++ _Este é bastante parecido com o exe2 (Divergent Change)_
++ Para quem fez o exercício anterior, há logo uma cena que salta à vista… Mas há outra comichão mais subtil :smile:
++ _Discount devia ser decomposto em três_
++ Vamos começar por essa, e ver quem chega à outra.
++ _Fixed, percentage e null_
++ Go for it, e depois mostra o código relevante
++ _Para evitar fazer isto:)_
+
+````java
+if(discount == null)
+````
+
++ Porque é que isso é mau?
++ _Bom, eu diria que ````null```` é universalmente mau :joy:_
++ _A classe discount nem precisa de existir, acho eu. Não é uma Data Class?_
++ _Porque obriga a que nos lembremos sempre de verificar_
++ _Mas neste caso a lógica depende do objeto existir ou não, que pode dar esturro quando adicionamos mais funcionalidades e esquecemo-nos disso_
++ _Um desconto nulo pode querer dizer algo diferente de um objeto ````Discount```` que é ````null````_
++ _nos ifs do applyidsocunt retornar logo_
++ _Substituir todos esses ifs por polimorfismo?_
++ _Replace conditional with polymorphism_
++ Nice… já estão a ficar pros :wink:
++ _Não poderia ser considerado um smell : temporary field? Já que só nunca utilizamos os todos os parâmetros de ````Discount```` ao mesmo tempo?
++ Já agora, a linha 18 não vos chateia ````double discountedPrice = price;````? Ou a 22…
++ In any case, essa opção de criar 3 subclasses em que uma delas representa um ````NoDiscount```` é conhecido por Introduce Null Object: https://refactoring.guru/introduce-null-object.
++ _É a mesma coisa que não fazer nada, na linha 22_
++ Pois, ambas são redundantes da forma como estão. Mas depois dos vossos refactorings, como é que fica?
++ _No construtor precisamos de inicializar o discount desta forma?
+````discount = new NoDiscount()````; Porque senão fica com o null de Java em vez do Null Object que criámos_
++ _Imagino que sim_
++ _C++ se não me engano não tem null references, só null pointers. Depois cada tipo de desconto pode implementar como quiser_
++ e qual é a diferença? null references, null pointers… nenhum é type-safe…
++ _Sim mas se fizermos int& em C++ temos garantia que referencia um int que existe. Senão acho que nem compila_
++ Acho que andas iludido com C++ :stuck_out_tongue: Queres uma linguagem type-safe e low-level? Olha para Rust!
++ _Tenho que me habituar à sintaxe :smile:_
+
 
 ##Exercise 4
 
