@@ -58,7 +58,7 @@ Há medida que este processo se vai desenrolando, eu vou ter uma atitude mais pa
 
 Não se esqueçam de sacar o código aqui: https://www.fe.up.pt/~arestivo/page/files/exercises/refactoring/refactoring.zip
 
-##Exercise 1
+## Exercise 1
 
 + _Este if-else é um bocado desnecessário_
 ![imgid](refactoring_tp_imgs/image_1.png)
@@ -153,7 +153,7 @@ Não se esqueçam de sacar o código aqui: https://www.fe.up.pt/~arestivo/page/f
 + Bem, perdemos muito tempo neste exercício, mas acho que agora ficou claro para vcs qual é o processo :slightly_smiling_face:
 + Quem quer colocar aqui o screenshot final da classe Order?
 
-##Exercise 2
+## Exercise 2
 
 + _Primeira coisa: Divergent Change: adicionar um novo tipo de Shape implica mudar métodos de Shape (além disso, abuso de switch case). Solução: Extract Subclass?_
 + _Yap_
@@ -172,7 +172,7 @@ Não se esqueçam de sacar o código aqui: https://www.fe.up.pt/~arestivo/page/f
 + Alguém me mostre um screenshot final do ````GraphicFramework````
 + _Eu transformei shape numa interface criei classes square e circle que implementam shape_
 
-##Exercise 3
+## Exercise 3
 
 + _Este é bastante parecido com o exe2 (Divergent Change)_
 + Para quem fez o exercício anterior, há logo uma cena que salta à vista… Mas há outra comichão mais subtil :smile:
@@ -210,7 +210,7 @@ if(discount == null)
 + Acho que andas iludido com C++ :stuck_out_tongue: Queres uma linguagem type-safe e low-level? Olha para Rust!
 + _Tenho que me habituar à sintaxe :smile:_
 
-##Exercise 4
+## Exercise 4
 
 + _Esta hierarquia de classes está um bocado aldrabada_
 + Qual é o smell?
@@ -245,7 +245,7 @@ if(discount == null)
 + _Pois, verdade_
 + _Neste caso o programa é muito simples mas é muito fácil pensar em coisas que se aplicam ao Cliente especificamente mas que não queremos que seja também herdado por Worker. Portanto facilita a extensão_
 
-##Exercise 5
+## Exercise 5
 
 + _Nested ifs_
 + Yep. Há multiplas formas de resolver este exercício. Sugiram cenas :slightly_smiling_face:
