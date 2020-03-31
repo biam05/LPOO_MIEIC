@@ -60,6 +60,35 @@ Não se esqueçam de sacar o código aqui: https://www.fe.up.pt/~arestivo/page/f
 
 ##Exercise 1
 
++ _Este if-else é um bocado desnecessário_
+![imgid](refactoring_tp_imgs/image_1.png)
++ ````java
+  return total > 100;
+  ````
++ Nome do smell?
++ _Aceder diretamente a um parâmetro em vez de usar getters é um code smell, certo?_
++ _Está nos bloaters? É código desnecessário que só complica a leitura da função_
++ _aclass orderline passar os atributos para private_
++ _O ````OrderLine````é essencialmente uma dataclass_
++ _Pois porque de momento nada nos impede de colocar uma quantidade negativa._
++ _Um setter podia fazer essa verificacao._
++ _Ah já agora, não é um code smell mas Elegible deveria ser Eligible_
++ _É mais english smell :laughing:_
++ _Eu pessoalmente pus um método em OrderLine_
++ _Para aceder o preço de uma OrderLine_
++ Não estou a ver nem nomes de smells, nem nomes de refactorings :stuck_out_tongue:
++ _Pois, verdade_
++ _O if statement desnecessário seria long method?_
++ _Refactoring seria com o inline method, no primeiro caso..._
++ _Sei que há um duplicate code na parte em que se calcula o total_
++ acho que esse não tem nome no catálogo, mas eu colocaria-o em code bloat.
++ E é das cenas que mais me enerva de ver, BTW
++ _Em que primeiro fiz extract method mas depois mesmo assim havia uma data clump com o total que se inicializava duas vezes_
++ Innapropriate Intimacy para os métodos públicos em ````OrderLine```` ?
++ _E para remover o data clump fiz um novo field que inicia o preço total da order a 0 e adiciona o preço de cada OrderLine introduzida sempre que uma é introduzida_
++ nome do refactoring…
++ _Pois, não sei ao certo que refactor usei_
+
 ##Exercise 2
 
 ##Exercise 3
@@ -71,3 +100,6 @@ Não se esqueçam de sacar o código aqui: https://www.fe.up.pt/~arestivo/page/f
 ##Exercise 6
 
 May the games begin!
+
+You know the drill. :heart: à medida que acham que identificaram todos os smells e refactorings. Aconselho-vos a criarem um README.md onde vão apontado isso. No final vou pedir um screenshot desse ficheiro.
+Volta e meia vou mandando uma achas para a fogueira em cada discussão. Não se esqueçam de tentarem identificar o nome do(s) smell(s) e do(s) refactoring(s) que resolveriam a coisa…
