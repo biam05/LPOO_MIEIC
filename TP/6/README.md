@@ -30,3 +30,21 @@ _______________________________________
 
 ## Final Class Order:
 ![imgid](img/new_order_class.png)
+
+# Exercise 2
+
+## Code Smell (Related to Shape Generalization):
++ Divergent Change - _ Changing many unrelated methods when you make changes to a class._
+
+## Refactoring:
++ Extract Subclass - _ A class has features that are used only in certain cases._
+
+_______________________________________
+
+## Code Smell:
++ Switch Statements -  Complex switch/if operators
+
+## Refactoring:
++ Replace Conditional with Polymorphism - _You have a conditional that performs various actions depending on object type or properties._
+
+

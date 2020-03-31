@@ -153,9 +153,25 @@ Não se esqueçam de sacar o código aqui: https://www.fe.up.pt/~arestivo/page/f
 + Bem, perdemos muito tempo neste exercício, mas acho que agora ficou claro para vcs qual é o processo :slightly_smiling_face:
 + Quem quer colocar aqui o screenshot final da classe Order?
 
-
-
 ##Exercise 2
+
++ _Primeira coisa: Divergent Change: adicionar um novo tipo de Shape implica mudar métodos de Shape (além disso, abuso de switch case). Solução: Extract Subclass?_
++ _Yap_
++ _Criei duas classes ````Rectangle```` e ````Circle```` que extendem ````Shape````_
++ _O ````GraphicFramework````  está aqui a fazer o quê?_
++ _````Shape```` passa a ter apenas os campos x e y (de posição, assumo)_
++ _Os testes vão ter que ser mudados_
++ Pq? :slightly_smiling_face:
++ _Porque a classe shape passou a ser abstrata. Nós queremos são as classes-filhas :)_
++ _E passamos a ter novas classes para representar circulos e retangulos_
++ _Novos construtores, etc.._
++ Então qual é o smell e quais são os refactorings?
++ _Switch Statements é outro smell_
++ _Podemos usar o replace type code with subclasses e remover o campo type_
++ _replace conditional with polymorphism_
++ Alguém me mostre um screenshot final do ````GraphicFramework````
++ _Eu transformei shape numa interface criei classes square e circle que implementam shape_
++ 
 
 ##Exercise 3
 
