@@ -72,7 +72,11 @@ _______________________________________
 
 # Exercise 5
 
+## Code Smell:
++ Nested If's
 
+## Refactoring:
++ Replace Type Code with Class - _ A class has a field that contains type code. The values of this type are not used in operator conditions and do not affect the behavior of the program._
 
 
 

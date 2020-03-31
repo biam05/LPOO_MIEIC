@@ -247,6 +247,18 @@ if(discount == null)
 
 ##Exercise 5
 
++ _Nested ifs_
++ Yep. Há multiplas formas de resolver este exercício. Sugiram cenas :slightly_smiling_face:
++ _Pode-se fazer um método RotateLeft, outro RotateRight e outro MoveForward_
++ Que resolveste com isso?
++ _Isto parece uma máquina de estados, mas não sei como é que esta informação contribui para a resolução_
++ _Já não há tantos ifs no mesmo método. E também fazer switch case em vez de ifs talvez ajude a tornar o código mais legível_
++ sim, mas a maior parte dos IFs continuam lá. Removeste um nível (o de fora), para deixar outro nível (vários de dentro).
++ Pessoal, ninguém está a ver um padrão no que diz respeito a IFs?
++ _Replace type code with state/strategy?_
++ Há outra solução, que envolve um padrão que aprendemos recentemente :slightly_smiling_face:
++ _Command?_
+
 ##Exercise 6
 
 May the games begin!
