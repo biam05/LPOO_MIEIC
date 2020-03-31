@@ -15,10 +15,7 @@ public class Order {
     }
 
     public boolean isElegibleForFreeDelivery() {
-        double total = getTotal();
-
-        if (total > 100) return true;
-        else return false;
+        return getTotal() > 100;
     }
 
     public double getTotal() {
@@ -37,7 +34,7 @@ public class Order {
         double total = 0;
 
         for (OrderLine line : lines)
-            total += line.getProduct().getPrice() * line.getQuantity();
+            total += line.getTotal();
 
         printBuffer.append("Total: " + total);
 
