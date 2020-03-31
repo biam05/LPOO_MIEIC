@@ -210,8 +210,40 @@ if(discount == null)
 + Acho que andas iludido com C++ :stuck_out_tongue: Queres uma linguagem type-safe e low-level? Olha para Rust!
 + _Tenho que me habituar à sintaxe :smile:_
 
-
 ##Exercise 4
+
++ _Esta hierarquia de classes está um bocado aldrabada_
++ Qual é o smell?
++ _Speculative Generality?_
++ Que é que esse smell diz?
++ _Refused Bequest?_
++ Não me parece que seja isso… Ao bocado estavam a entrar nesta onda, mas agora tens razão. Queres explicar?
++ _A classe client está a usar apenas alguns dos atributos e funcionalidades da classe worker_
++ O que nos leva à elequência, quando diz que a hierarquia “está um bocado aldrabada” 
++ _Se calhar a hierarquia pode ser invertida_
++ Ou se calhar falta algo
++ _Falta uma classe Person, por exemplo_
++ _Termos uma classe geral com name e phone e outra que herda dela com campos adicionais username e password_
++ que teria essa classe?
++ _Name e phone_
++ então digam-me lá quem é que extende o quê?
++ _Worker e Client extendem Person_
++ _Supervisor extende Worker_
++ Cheirou-vos a algum padrão aqui? Podemos ter supervisores que supervisionam outros supervisores?
++ _Composite_
++ _Sim, porque supervisor extende worker E aceita um set de workers_
++ _a classe client nao vai fazer nada certo, pode ser removida?_
++ tens que poder instanciar um Cliente
++ _A não ser que queiramos adicionar coisas específicas a clientes que não se aplicam a workers_
++ senão o que é que aconteceria ao ````testClient()```` ?
++ _Tipo transações feitas com a empresa..._
++ _Podia-se substituir o client por person. A não ser que se crie person como classe abstrata_
++ _Mas aí nunca irías poder fazer referência ao login (que de facto nunca é utilizado em testes). Do cliente._
++ Agora sim parece-me que estão a entrar por generalização especulativa :stuck_out_tongue:
++ _Eu deixaria o Cliente a herdar de Person_
++ Na ausência de mais exemplos de utilização da API/testes, acho que isto é o mais longe que conseguimos ir.
++ _Pois, verdade_
++ _Neste caso o programa é muito simples mas é muito fácil pensar em coisas que se aplicam ao Cliente especificamente mas que não queremos que seja também herdado por Worker. Portanto facilita a extensão_
 
 ##Exercise 5
 

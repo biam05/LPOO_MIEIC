@@ -58,4 +58,22 @@ _______________________________________
 ## Final Class Discount:
 ![imgid](img/discount.png)
 
+_______________________________________
+
+# Exercise 4
+
+## Code Smell:
++ Refused Bequest - _If a subclass uses only some of the methods and properties inherited from its parents._
+
+## Refactoring:
++  Criação de uma nova classe Persond e onde são herdados o ````name```` e o ````phone````
+
+_______________________________________
+
+# Exercise 5
+
+
+
+
+
 
