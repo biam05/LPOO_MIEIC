@@ -88,6 +88,72 @@ Não se esqueçam de sacar o código aqui: https://www.fe.up.pt/~arestivo/page/f
 + _E para remover o data clump fiz um novo field que inicia o preço total da order a 0 e adiciona o preço de cada OrderLine introduzida sempre que uma é introduzida_
 + nome do refactoring…
 + _Pois, não sei ao certo que refactor usei_
++ _Talvez o smell nem seja um data clump, porque o refactor não é nenhum dos que aparecem como solução de data clump_
++ _Eu fiz simplesmente uma funcao calculateOrderPrice mas se calhar essa solução é melhor, teria de certo modo menos cálculos_
++ _Mas se calhar método add ficava com duas responsabilidades? Não sei se isso seria pior_
++ _Acho que é só uma, pois adiciona a OrderLine ao array e adiciona o preço da OrderLine ao preço total da Order, que é uma consequência de adicionar a OrderLine_
++ _O IntelliJ sugere-me substituir StringBuffer por StringBuilder_
++ Vamos lá então estruturar o nosso pensamento neste exercício
++ _Mas se o preço de um produto mudar temos de recalcular o preço de todas as orders_
++ Comecemos por código repetido… Quem é que vê código repetido? Onde?
++ _No cálculo do preço total da Order_
++ _Temos o mesmo double temp... for (OrderLine line : lines).. etc_
++ Solução?
++ _Extract method?_
++ Screenshot de como ficaria.
+![imgid](refactoring_tp_imgs/image_2.png)
++ Como acham que depois disto pode ficar o isElegibleForFreeDelivery()? 
++ eu chamei getTotal()
++ Right. Neste espaço de tempo usamos dois refactorings. Quais?
++ _Extract Method?_
++ _Inline?_
++ E agora, quem é que acha que há classes que não estão a praticar distanciamento social?
++ _Order e orderline?_
++ Pq?
++ _Aceder diretamente aos atributos_
++ _Atributos públicos_
++ Atenção a este caso. Porque é que atributos públicos são maus? Ou porque é que não gostam?
++ _Anteriormente tinha dito que podiamos por um valor negativo na quantidade. Um setter podia lançar uma exceção ou algo parecido nesse caso_
++ Algum principio de SOLID que possa estar a ser violado?
++ _SRP?_
++ _Order nao precisa de saber como OrderLine funciona?_
++ _Pelo menos internamente_
++ e isso é SRP?
++ Se calhar não... talvez seja Open-Closed
++ A ruminar… Still, é um smell. Qual o refactoring apropriado aqui?
++ _Encapsular atributos?_
++ Encapsulate Field, boa
++ Apareceu aí um método que nada tem a haver com o encapsulate field, certo?
++ _É melhor usar sempre this para membros de uma classe ou é personal preference?_
++ A minha preferência pessoal é que isso deve ser uma preferência pessoal.
++ _Se usarmos product e quantity em vez de getProduct() e getQuantity() na própria classe não conta como smell, certo? Ou também é smell?_
++ _Eu pessoalmente só utilizo quando é necessário (member variables e local variables com o mesmo nome)_
++ Isso… Pah, algumas linguagem mais “avançadas”, como o C#, TypeScript e Swift, têm sintaxe própria para getters e setters, para não ficar esta duplicação abusiva.
++ _nao deveriamos ter um metodo dentro da classe para o nome do produto e outra para o preco e depois no order fariamos getProdutPreco por exemplo_
++ Isso onde?
++ _isto na classe order line_
++ Que é que resolves com essa indirecção?
++ _nada_
++ E estás basicamente a criar um método que só vai ser chamado uma vez… e ainda dizes que é publico, quando ninguém cá fora o vai usar… certo?
++ _tb vai ser usado no printOrder, mas certo_
++ Continuando, reparem que o getTotal() vem de duas coisas… primeiro, de uma certa intimidade entre duas classes que nos dá comichão. Segundo, porque parece que a classe OrderLine inicialmente não existe para fazer mais nada do que guardar valores. aliás, a classe Order passa a vida a mexer nos detalhes da OrderLine.
++ Vemos então dois smells. Order Line parece ser uma Lazy Class, e Order parece ter Feature Envy de Order Line.
++ Que outro sítio em Order vos impressiona na quantidade de detalhes que mexe dentro de OrderLine
++ _printOrder?_
++ Solução?
++ _Talvez mover o método de fazer print de cada orderline_
++ _Uma OrderLine devia saber imprimir-se a si própria..._
++ Ou pelo menos retornar uma representação dela enquanto string 
++ Há uma convenção para isso em Java, certo?
++ _toString()?_
++ Duas coisas:
++ (1) Acerca do uso dos StringBuffers e Builders: https://dzone.com/articles/string-concatenation-performacne-improvement-in-ja
++ (2) Acerca dos + em Java, devem ter a noção que outras linguagens decentes permitem o uso de string interpolation: https://en.wikipedia.org/wiki/String_interpolation#Java
++ Até Javascript é melhor que Java aqui… :sweat:
++ Bem, perdemos muito tempo neste exercício, mas acho que agora ficou claro para vcs qual é o processo :slightly_smiling_face:
++ Quem quer colocar aqui o screenshot final da classe Order?
+
+
 
 ##Exercise 2
 
