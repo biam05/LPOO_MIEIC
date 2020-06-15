@@ -20,7 +20,7 @@ public class RecipesTests {
 			assertTrue(Modifier.isAbstract(c.getModifiers()));
 		}
 	
-    /*@Test
+    @Test
     public void testIngredient() {
         SimpleIngredient apple = new SimpleIngredient("apple");
         SimpleIngredient milk = new SimpleIngredient("milk");
@@ -29,13 +29,13 @@ public class RecipesTests {
         assertEquals("milk", milk.getName());
         fieldsArentPublic(SimpleIngredient.class);
     }
-    
+
     @Test(expected=IllegalArgumentException.class)
     public void testIngredientName() throws Exception {
         new SimpleIngredient(null);
-    }*/
+    }
 
-    /*@Test
+    @Test
     public void testStep() {
         RecipeStep slice = new RecipeStep("mixed fruits", "slice");
         assertEquals("mixed fruits", slice.getName());
@@ -56,9 +56,9 @@ public class RecipesTests {
         } 
         
         fieldsArentPublic(RecipeStep.class);
-    }*/
+    }
     
-   /* @Test
+   @Test
     public void testEquals() {
     	SimpleIngredient a = new SimpleIngredient("flower");
     	SimpleIngredient b = new SimpleIngredient("flower");
@@ -67,9 +67,9 @@ public class RecipesTests {
     	assertFalse(a.equals((Object)c));
 		assertTrue(a.equals(b)); 
 		assertTrue(a.equals((Object)b));		
-    }*/
+    }
     
-    /*@Test
+    @Test
     public void testRecipeStepIngredients() {
         SimpleIngredient apple = new SimpleIngredient("apple");
         SimpleIngredient orange = new SimpleIngredient("orange");
@@ -86,9 +86,9 @@ public class RecipesTests {
         assertEquals(1.4f, mixedFruits.getQuantity(apple), 0);
         assertEquals(0.7f, mixedFruits.getQuantity(orange), 0);
         assertEquals(0f, mixedFruits.getQuantity(milk), 0);
-    }*/
+    }
 
-    /*@Test
+    @Test
     public void testOvenStep() {
         SimpleIngredient pizza = new SimpleIngredient("pizza");
         
@@ -97,12 +97,12 @@ public class RecipesTests {
         
         assertEquals("hot pizza", bake.getName());        
         assertEquals("bake", bake.getAction());        
-        assertEquals(220, bake.getTemperature());      
+        assertEquals(220, bake.getTemperature());
         
         fieldsArentPublic(OvenStep.class);
     }
-*/
-    /*@Test
+
+    @Test
     public void testQuantities() {
         Ingredient apple = new SimpleIngredient("apple");
         Ingredient orange = new SimpleIngredient("orange");
@@ -124,9 +124,9 @@ public class RecipesTests {
         
         fieldsArentPublic(Ingredient.class);
         isAbstract(Ingredient.class);
-    }*/
+    }
 
-    /*@Test
+    @Test
     public void testTotalQuantities() {
         SimpleIngredient apple = new SimpleIngredient("apple");
         SimpleIngredient orange = new SimpleIngredient("orange");
@@ -142,9 +142,9 @@ public class RecipesTests {
 
         assertEquals(2.2f, sweetFruits.getQuantity(apple), 0);
         assertEquals(1.0f, sweetFruits.getQuantity(orange), 0);
-    }*/
+    }
 
-    /*@Test
+    @Test
     public void testToString() {
         SimpleIngredient apple = new SimpleIngredient("apple");
         SimpleIngredient orange = new SimpleIngredient("orange");
@@ -165,9 +165,9 @@ public class RecipesTests {
         // ingredients always come in alphabetical order
         assertEquals("to make mixed fruits, slice 1.2 apple, 0.8 orange", "" + mixedFruits);
         assertEquals("to make sweet fruits, mix 2.0 mixed fruits, 0.3 sugar", "" + sweetFruits);
-    }*/
+    }
 
-    /*@Test
+    @Test
     public void testRecipe() {
     	SimpleIngredient cheese = new SimpleIngredient("cheese");
         SimpleIngredient ham = new SimpleIngredient("ham");
@@ -225,6 +225,7 @@ public class RecipesTests {
         }
         
         assertEquals("[bread][cheese][francesinha sauce][ham][olive][tooth pick]",s);
-    }*/
+    }
+
 
 }
