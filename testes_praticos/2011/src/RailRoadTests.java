@@ -6,31 +6,31 @@ public class RailRoadTests  {
 
 	@Test
 	public void testComboio() {
-		/*Comboio c1 = new Comboio("Regional");
+		Comboio c1 = new Comboio("Regional");
 		assertEquals("Regional", c1.getNome());	
 	
 		Comboio c2 = new Comboio("Intercidades");
-		assertEquals("Intercidades", c2.getNome());	*/
+		assertEquals("Intercidades", c2.getNome());
 	}
 
 	@Test
 	public void testSubclassesComboio() {		
-		/*Comboio tgv = new TGV("Speeder");
+		Comboio tgv = new TGV("Speeder");
 		assertEquals("Speeder", tgv.getNome());
 		
 		Comboio pendular = new Pendular("Alfa Pendular");
-		assertEquals("Alfa Pendular", pendular.getNome());*/
+		assertEquals("Alfa Pendular", pendular.getNome());
 	}
 
 	@Test
 	public void testCarruagem() {
-		/*Carruagem a1 = new Carruagem(40);
-		assertEquals(40, a1.getNumLugares());*/
+		Carruagem a1 = new Carruagem(40);
+		assertEquals(40, a1.getNumLugares());
 	}		
 	
 	@Test
 	public void testAddCarruagem() {
-		/*Comboio train = new Comboio ("Regional");
+		Comboio train = new Comboio ("Regional");
 		
 		assertEquals(0, train.getNumLugares());
 		assertEquals(0, train.getNumCarruagens());
@@ -48,12 +48,12 @@ public class RailRoadTests  {
 		assertSame(a1, train.getCarruagemByOrder(0));
 		assertSame(a2, train.getCarruagemByOrder(1));
 
-		assertEquals(n1 + n2, train.getNumLugares());*/
+		assertEquals(n1 + n2, train.getNumLugares());
 	}
 	
 	@Test
 	public void testRemoveCarruagensPorCapacidade() {
-		/*Comboio train = new Comboio("Regional");
+		Comboio train = new Comboio("Regional");
 		
 		train.addCarruagem(new Carruagem(10));
 		train.addCarruagem(new Carruagem(20));
@@ -73,12 +73,12 @@ public class RailRoadTests  {
 		train.removeAllCarruagens(10);
 
 		assertEquals(2, train.getNumCarruagens());
-		assertEquals(50, train.getNumLugares());*/
+		assertEquals(50, train.getNumLugares());
 	}
 	
 	@Test
 	public void testAddPassageiros() throws PassengerCapacityExceeded {
-		/*Comboio train = new Comboio("Regular");
+		Comboio train = new Comboio("Regular");
 		train.addCarruagem(new Carruagem(10));
 		train.addCarruagem(new Carruagem(10));
 
@@ -93,19 +93,19 @@ public class RailRoadTests  {
 		// Adiciona mais ata encher 
 		train.addPassageiros(19);
 		assertEquals(20, train.getNumPassageiros());
-		assertEquals(0,train.getLugaresLivres());*/
+		assertEquals(0,train.getLugaresLivres());
 	}
 
-	@Test//(expected=PassengerCapacityExceeded.class)
+	@Test(expected=PassengerCapacityExceeded.class)
 	public void testPassengerCapacityExceeded() throws PassengerCapacityExceeded {
-		/*Comboio train = new Comboio("Regular");
+		Comboio train = new Comboio("Regular");
 		train.addCarruagem(new Carruagem(10));
-		train.addPassageiros(11);*/
+		train.addPassageiros(11);
 	}
 
 	@Test
 	public void testRemovePassageiros() throws PassengerCapacityExceeded {
-		/*Comboio train = new Comboio("Regular");
+		Comboio train = new Comboio("Regular");
 		train.addCarruagem(new Carruagem(10));
 		train.addPassageiros(10);
 
@@ -113,12 +113,12 @@ public class RailRoadTests  {
 		assertEquals(9, train.getNumPassageiros());
 		
 		train.removePassageiros(); // sem parametro remove todos		
-		assertEquals(0, train.getNumPassageiros());	*/
+		assertEquals(0, train.getNumPassageiros());
 	}
 	
 	@Test
 	public void testImprimeDadosDoComboio() throws PassengerCapacityExceeded {
-		/*Comboio c1 = new Comboio("Regional");
+		Comboio c1 = new Comboio("Regional");
 		c1.addCarruagem(new Carruagem(10));
 		c1.addCarruagem(new Carruagem(20));
 		c1.addPassageiros(25);
@@ -128,7 +128,7 @@ public class RailRoadTests  {
 		Comboio c2 = new TGV("Speeder");
 		c2.addCarruagem(new Carruagem(1));
 
-		assertEquals("TGV Speeder, 1 carruagem, 1 lugar, 0 passageiros", c2.toString());*/
+		assertEquals("TGV Speeder, 1 carruagem, 1 lugar, 0 passageiros", c2.toString());
 	}
 
 	/**
@@ -137,7 +137,7 @@ public class RailRoadTests  {
 	 */
 	@Test
 	public void testComboiosIguais() {
-		/*Comboio c1 = new Comboio("C1");
+		Comboio c1 = new Comboio("C1");
 		Comboio c2 = new Comboio("C2");
 		
 		assertEquals(c1, c2);
@@ -155,13 +155,13 @@ public class RailRoadTests  {
 		c2.addCarruagem(new Carruagem(30));
 		c2.addCarruagem(new Carruagem(20));
 		
-		assertFalse(c1.equals(c2));*/
+		assertFalse(c1.equals(c2));
 	}
 	
 
 	@Test
 	public void testServicoABordo() {		
-		/*// Os comboios normais teem por defeito o servico regular
+		// Os comboios normais teem por defeito o servico regular
 		Comboio c1 = new Comboio("Regional");
 		ServicoABordo s1 = c1.getServicoABordo();
 		assertTrue(s1 instanceof ServicoRegular);	
@@ -181,7 +181,7 @@ public class RailRoadTests  {
 		
 		// Mas pode-se mudar o servico por defeito 
 		c1.setServicoABordo(new ServicoPrioritario());
-		assertEquals("Servico prioritario.",c1.getDescricaoServico());*/
+		assertEquals("Servico prioritario.",c1.getDescricaoServico());
 	}
 	
 }
