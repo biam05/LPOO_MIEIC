@@ -6,21 +6,21 @@ public class FileSystemTest{
 
 	@Test
 	public void testCreateFileSystem() {
-		/*FileSystem fs = new FileSystem("FAT32");
-		assertEquals("FAT32", fs.getType());	*/
+		FileSystem fs = new FileSystem("FAT32");
+		assertEquals("FAT32", fs.getType());
 	}
 
 	@Test
 	public void testFileSystemRoot() {
-		/*FileSystem fs = new FileSystem("FAT32");
+		FileSystem fs = new FileSystem("FAT32");
 		Folder root = fs.getRoot();
 		assertNull(root.getParent());
-		assertSame(root,fs.getRoot());*/
+		assertSame(root,fs.getRoot());
 	}
 
 	@Test
 	public void testCreateNodes() throws DuplicateNameException {
-		/*FileSystem fs = new FileSystem("FAT32");
+		FileSystem fs = new FileSystem("FAT32");
 		Folder root = fs.getRoot();	
 		
 		Node node1 = new Folder(root, "bin");
@@ -29,40 +29,40 @@ public class FileSystemTest{
 
 		Node node2 = new File(root, "readme.txt");
 		assertSame(root, node2.getParent());
-		assertEquals("readme.txt", node2.getName());*/
+		assertEquals("readme.txt", node2.getName());
+
 	}
 
 	@Test
 	public void testFolderContents() throws DuplicateNameException {
-		/*FileSystem fs = new FileSystem("FAT32");
+		FileSystem fs = new FileSystem("FAT32");
 		Folder root = fs.getRoot();		
 		Node node1 = new Folder(root, "bin");
 		Node node2 = new File(root, "readme.txt");
 		Node[] child = {node1, node2};
-		assertTrue(Arrays.equals(child, root.getChild()));*/
+		assertTrue(Arrays.equals(child, root.getChild()));
 	}
 
 	@Test
 	public void testGetChildByName() throws DuplicateNameException {
-		/*FileSystem fs = new FileSystem("FAT32");
+		FileSystem fs = new FileSystem("FAT32");
 		Folder root = fs.getRoot();		
 		Node node1 = new Folder(root, "bin");
 		assertSame(node1, root.getChildByName("bin"));
-		assertNull(root.getChildByName("bin2"));*/
+		assertNull(root.getChildByName("bin2"));
 	}
 
-	@Test//(expected = DuplicateNameException.class)
+	@Test(expected = DuplicateNameException.class)
 	public void testDuplicateName() throws DuplicateNameException {
-		/*FileSystem fs = new FileSystem("FAT32");
+		FileSystem fs = new FileSystem("FAT32");
 		Folder root = fs.getRoot();		
 		Node node1 = new Folder(root, "bin");
 		Node node2 = new File(root, "bin");
-		}*/
 	}
 
 	@Test
 	public void testAutoNumber() throws DuplicateNameException {
-		/*Node.resetNumbering(0);
+		Node.resetNumbering(0);
 		FileSystem fs = new FileSystem("FAT32");
 		Folder root = fs.getRoot();		
 		assertEquals(1, root.getNumber());
@@ -70,28 +70,28 @@ public class FileSystemTest{
 		assertEquals(2, node1.getNumber());
 		
 		FileSystem fs2 = new FileSystem("FAT128");
-		assertEquals(3, fs2.getRoot().getNumber());*/
+		assertEquals(3, fs2.getRoot().getNumber());
 	}
 
 	@Test
 	public void testSize() throws DuplicateNameException {
-		/*FileSystem fs = new FileSystem("FAT32");
+		FileSystem fs = new FileSystem("FAT32");
 		Folder root = fs.getRoot();		
 		Folder folder = new Folder(root, "bin");
 		File file1 = new File(folder, "readme.txt", 100);
 		assertEquals(100, file1.getSize());
 		File file2 = new File(root, "readme.txt", 200);
 		assertEquals(200, file2.getSize());
-		assertEquals(300, root.getSize());*/
+		assertEquals(300, root.getSize());
 	}
 
 	@Test
 	public void testPathNameFormatter() throws DuplicateNameException {
-		/*NameFormatter dos = new DOSFormatter();
+		NameFormatter dos = new DOSFormatter();
 		NameFormatter unix = new UnixFormatter();
 		
-		assertEquals('/', unix.getSeparator());
-		assertEquals('\\', dos.getSeparator());
+		assertEquals((Object)'/', (Object)unix.getSeparator());
+		assertEquals((Object)'\\', (Object)dos.getSeparator());
 
 		FileSystem fs = new FileSystem("FAT32");
 		Folder root = fs.getRoot();		
@@ -102,7 +102,7 @@ public class FileSystemTest{
 		assertEquals("/etc/crontab", crontab.getPath());		
 
 		fs.setNameFormatter(dos);
-		assertEquals("\\etc\\crontab", crontab.getPath());	*/
+		assertEquals("\\etc\\crontab", crontab.getPath());
 	}
 
 	@Test
@@ -126,7 +126,7 @@ public class FileSystemTest{
 		// ... e o neto
 		File crontab2 = (File)cron2.getChildByName("crontab");
 		assertNotSame(crontab, crontab2); // ficheiros diferentes
-		assertEquals(crontab, crontab2);  // mas com o mesmo conteúdo (nome, tamanho) */
+		assertEquals(crontab, crontab2);  // mas com o mesmo conteúdo (nome, tamanho)*/
 	}
 
 	@Test
