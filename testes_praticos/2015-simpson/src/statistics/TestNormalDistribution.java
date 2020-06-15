@@ -1,50 +1,52 @@
 package statistics;
 
 import static org.junit.Assert.*;
+
+import numerics.*;
 import org.junit.Test;
 
 
 public class TestNormalDistribution {	
 	// probablidade entre a média e dois desvios padrões ao lado
-	private static final double prob2sigma = 0.477250; 	
+	private static final double prob2sigma = 0.477250;
 	private static final double precision  = 5E-7;
 
-	/*@Test
+	@Test
 	public void testConstructor() {
 		NormalDistribution n = new NormalDistribution(1.0, 3.0);
 		assertEquals(1.0, n.getMean(), 0.0);
 		assertEquals(3.0, n.getStddev(), 0.0);
-	}*/
+	}
 
-	/*@Test
+	@Test
 	public void testDefaultConstructor() {
 		NormalDistribution n = new NormalDistribution();
 		assertEquals(0.0, n.getMean(), 0.0);
 		assertEquals(1.0, n.getStddev(), 0.0);
-	}*/
+	}
 	
-	/*@Test(expected = IllegalArgumentException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void testInvallidStddev() {
 		new NormalDistribution(0, 0);
 	}
-*/
-	/*@Test
+
+	@Test
 	public void testProbabilityDistribution() {
 		ProbabilityDistribution d = new NormalDistribution(0,1);
 		assertEquals(0.0, d.getMean(), 0.0);
 		assertEquals(1.0, d.getStddev(), 0.0);		
-	}*/
+	}
 
-	/*@Test
+	@Test
 	public void testProbabilityDensityFunction() {
 		// See formula in http://en.wikipedia.org/wiki/Normal_distribution 
 		ProbabilityDistribution d = new NormalDistribution(0.0, 1.0);
 		assertEquals(0.3989423, d.probabilityDensityFunction(0.0), precision);
 		assertEquals(0.2419707, d.probabilityDensityFunction(1.0), precision);
 		assertEquals(0.2419707, d.probabilityDensityFunction(-1.0), precision);
-	}*/
+	}
 
-	/*@Test
+	@Test
 	public void testCalcRangeProbability() {
 		// calcRangeProbability(a,b) : probability of random variable 
 		// being in the interval [a, b]
@@ -52,8 +54,9 @@ public class TestNormalDistribution {
 		assertEquals(prob2sigma, n.calcRangeProbability(0, 2), precision);
 		assertEquals(prob2sigma, n.calcRangeProbability(-2, 0), precision);
 		assertEquals(2*prob2sigma, n.calcRangeProbability(-2, 2), precision);
-	}*/
+	}
 
+	// nao estou para perder tempo em contas
 	/*@Test
 	public void testCalcLeftProbability() {
 		// calcLeftProbability(x) : probability of random variable <= x
@@ -63,19 +66,19 @@ public class TestNormalDistribution {
 		assertEquals(0.5 - prob2sigma, n.calcLeftProbability(-1.0), precision);
 	}*/
 
-	/*@Test
+	@Test
 	public void testEquals() {
 		NormalDistribution d1 = new NormalDistribution(0, 1);
 		NormalDistribution d2 = new NormalDistribution(0, 1);
 		assertNotSame(d1, d2);
 		assertEquals(d1, d2);
-	}*/
+	}
 	
-	/*@Test
+	@Test
 	public void testAsString() {
 		NormalDistribution d1 = new NormalDistribution(2.0, 5.0);
 		assertEquals("N(2.0, 5.0)", d1 + "");
-	}*/
+	}
 	
 	/*@Test
 	public void testFindDistribution() {
@@ -84,4 +87,6 @@ public class TestNormalDistribution {
 		assertSame(X, ProbabilityDistribution.find("X"));
 		assertNull(ProbabilityDistribution.find("Z"));
 	}*/
+
 }
+
