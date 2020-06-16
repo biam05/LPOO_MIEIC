@@ -4,6 +4,7 @@
 1. [2016/2017](#20162017)
 2. [2015/2016](#20152016)
 3. [2014/2015](#20142015)
+4. [2012/2013](#20122013)
 
 ## 2016/2017
 
@@ -529,6 +530,7 @@ Logo é a opção **B**.
 ### 19.
 
 ***Extract Method***: agrupar fragmentos de código
+
 ***Lazy Class***: classes que não fazem muito ao longo do programa
 
 De nenhuma maneira, agrupar fragmentos de código irá tornas uma classe mais "útil", logo é a opção **D**.
@@ -559,3 +561,165 @@ public class Pessoa {
 + Os comentários são desnecessários porque através das funções percebe-se a que é que cada variável se refere.
 
 Por exclusão de partes é a opção **D**.
+
+## 2012/2013
+
+### 1.
+
++ Associação navegável: traço não tracejado/seta não tracejada
++ Concretização: seta tracejada com um triângulo branco
++ Generalização: seta não tracejada com um triângulo branco
++ Dependência: seta tracejada
+
+Logo é a opção **A**
+
+### 2.
+
+As generalizações permitem relacional as subclasses e as superclasses logo é a opção **A**.
+
+### 3.
+
++ C3 implementa a interface I1
++ C2 depende da interface I1
+
+A classe C2 usa uma interface I1 que é implementada pela classe C3 (opção **A**).
+
+### 4.
+
++ C1 tem um atributo privado ordenado de C2 de nome r2
++ C2 tem um atributo único de C1 de nome r1
+
+Como os Sets são estruturas de dados ordenadas:
+
+````java
+class C1 {  private Set<C2> r2; }            
+class C2 {  private C1  r1; }
+````
+
+Logo é a opção **B**.
+
+### 5.
+
+Os diagramas de sequência ilustram a interação entre objetos numa ordem sequencial de acontecimentos, logo é a opção **C**.
+
+### 6. 
+
+Tipos de Mensagens válidas:
++ Retorno
++ Ativação
++ *Self Message*
++ Criação
++ Destruição
++ Duração
+
+Por exclusão de partes é a opçãao **C**.
+
+### 7.
+
+m4 não pode ocorrer depois de m3 porque estão juntos no mesmo "quadrado", logo é a opção **D**
+
+### 8.
+
++ Mensagem síncrona: seta não tracejada com um triângulo preenchido
++ Mensagem assíncrona: seta não tracejada
++ Mensagem de criação de objeto: seta tracejada
++ Mensagem de fluxo de dados: seta com curvatura (não tenho a certeza, procurei na net)
+
+Logo é a opção **A**.
+
+### 9.
+
+Os diagramas de classe servem para para modelar o ciclo de vida de objetos ou sistema, analisando os seus comportamentos e a mudança destes na presença de determinados eventos, logo é a opção **A**.
+
+### 10.
+
+A utilização de regiões ortogonais permite evitar a explosão combinatória de estados, sendo, assim, a opção **A**.
+
+### 11.
+
+As transições têm de ter um *trigger*, uma condição de guarda e um efeito, logo é a opção **C**.
+
+### 12.
+
+**Não tenho a certeza disto mas**:
+
+Opção **A** porque para poder haver o evento e3 tem de acontecer o evento e2, logo essa sequência não é possível.
+
+### 13.
+
+Um design pattern é uma solução geral que pode ser reutilizada para resolver alguns problemas comuns dado um determinado contexto, logo é a opção **B** (as soluções não são garantidamente boas).
+
+### 14.
+
+Princípios fundamentais de orientação por objetos (A PIE):
++ ***Abstraction***: possibilidade de definir classes como abstrações para conjuntos de objetos com propriedades similares.
++ ***Polymorphism***: possibilidade da implementação de um método variar de acordo com a subclasse do objeto.
++ ***Inheritance***: possibilidade das subclasses herdarem propriedades das superclasses.
++ ***Encapsulation***: possibilidade de restringir o acesso a algumas propriedades de um objeto e facilidade na compilação de informação e de operações que a manipulam.
+
+Logo é a opção **A**.
+
+### 15.
+
+ A melhor estratégia para usar padrões de desenho é tê-los presentes para os usar sempre que a necessidade surja, uma vez que a sua implementação a-priori pode levar à construção de códigos demasiado complexos desnecessariamente, devendo-se assim implementar apenas quando surge a necessidade de tal (opção **B**).
+
+ ### 16.
+
+ Não demos esta matéria.
+
+ ### 17.
+
+ ***Refactoring***: técnica controlada de melhorar o *design* e o código base existente, tornando-o mais fácil de compreender e modificar, sem alterar o comportamento observável do programa.
+
+ Logo é a opção **A**.
+
+ ### 18. 
+
+***Extract Method***: agrupar fragmentos de código
+
+***Lazy Class***: classes que não fazem muito ao longo do programa
+
+De nenhuma maneira, agrupar fragmentos de código irá tornas uma classe mais "útil", logo é a opção **D**.
+
+### 19.
+
+````java
+if(hX == dX){
+    if(Math.abs(dY-hY) == 1){
+        if(h.armado){
+            d.vivo = false;
+            labi[dX][dY] = ' ';
+        }
+        else if(d.dorme == false)
+            h.vivo = false;
+    }
+}
+...
+if(hY == dY){
+    if(Math.abs(dX-hX) == 1){
+        if(h.armado){
+            d.vivo = false;
+            labi[dX][dY] = ' ';
+        }
+        else if(d.dorme == false)
+            h.vivo = false;
+    }
+}
+````
+
+Devia-se utilizar o extract method para agrupar o código que se encontra duplicado em ambas as condições (opção **A**).
+
+### 20.
+
+````java
+public class Customer{
+    private Phtone mobilePhone;
+    public String getMobilePhoneNumber(){
+        return "(" + mobilePhone.getAreaCode() + ") " + mobilePhone.getPrefix() + "-" + mobilePhone.getNumber();
+    }
+    ...
+}
+````
+
+
+
