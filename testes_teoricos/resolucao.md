@@ -1,8 +1,9 @@
 # Resolução Testes Teóricos (2019/2020)
 
 # Índice
-1. [2016/2017](#2016/2017)
-2. [2015/2016](#2015/2016)
+1. [2016/2017](#20162017)
+2. [2015/2016](#20152016)
+3. [2014/2015](#20142015)
 
 ## 2016/2017
 
@@ -398,3 +399,163 @@ public class Game{
 ````
 
 O código apresentado devia presentar a classe Position, por exemplo dar override do método equals para comparar as duas posições, logo é a opção **D**.
+
+## 2014/2015
+
+### 1.
+
+Princípios fundamentais de orientação por objetos (A PIE):
++ ***Abstraction***: possibilidade de definir classes como abstrações para conjuntos de objetos com propriedades similares.
++ ***Polymorphism***: possibilidade da implementação de um método variar de acordo com a subclasse do objeto.
++ ***Inheritance***: possibilidade das subclasses herdarem propriedades das superclasses.
++ ***Encapsulation***: possibilidade de restringir o acesso a algumas propriedades de um objeto e facilidade na compilação de informação e de operações que a manipulam.
+
+Assim, a opção correta é a **B**.
+
+### 2.
+
+*Keywords* do tratamento de exceções em Java:
+
++ ``try``
++ ``throw``/``throws``
++ ``catch``
++ ``finally``
+
+Por exclusão de partes, observa-se que ``onerror`` não é usado no tratamento de exceções, logo a opção correta é a **B**.
+
+### 3.
+
+Boas práticas e ferramentas de teste unitário:
++ *TTD* consiste em fazer os testes antes de implementas as funcionalidades a ser testadas
++ Não demos EclEmma
++ Em JUnit, os valores retornados são testados com o auxílio de asserções (por exemplo, assertEqual)
++ As ferramentas de teste por mutação como PIT são usadas para criar mutações no código e verificar se os testes são capazes de eliminar as mutações criadas
+
+Logo a opção correta é a **E**.
+
+### 4.
+
+Funcionalidades suportadas pro Java 8:
+
++  Expressões lambda.
++  Referências para métodos.
++  Tipos e métodos genéricos (ou parametrizados).
+
+Uma classe só pode estender uma classe, logo a opção correta é a **C**.
+
+### 5.
+
++ Números em vírgula flutuande de precisão dupla: ``Double``/``double`` (dependendo da estrutura de dados)
++ Coleção ordenada sem duplicados:
+  + A ``ArrayList`` não é ordenada e pode ter duplicados
+  + O ``TreeSet`` é ordenado e elimina os duplicados
+  + O ``HashSet`` não é ordenado e elimina os duplicados
+  + O ``TreeMap`` é ordenado mas não elimina os duplicados
+
+Logo a resposta correta é a **C**, ``TreeSet<Double>``.
+
+### 6.
+
+Não demos esta matéria. (**E**)
+
+### 7.
+
+Não demos esta matéria. (**D**)
+
+### 8.
+
+Não demos esta matéria. (**B**)
+
+### 9. 
+
+Não demos esta matéria. (**B**)
+
+### 10.
+
+Não demos esta matéria. (**C**)
+
+### 11.
+
+Associação navegável: um traço sem ser tracejado
+Dependência: seta tracejada
+Generalização: seta sem ser tracejada com um triângulo em branco na superclasse
+Concretização: seta tracejada com um triângulo em branco
+
+Logo é a opção **B**.
+
+### 12.
+
++ C4 implementa a interface I1
++ C2 é a superclasse de C4
++ C4 tem um atributo privado de C3 com nome r3
+
+````java
+class C4 implements I1 extends C2{ private HashSet<C3> r3;}
+````
+
+Assim, é a opção **D**.
+
+### 13.
+
+Nos diagramas de sequência não se representam transições, logo a opção é a **B**.
+
+### 14.
+
+Podem existir transições com o mesmo evento e o mesmo estado de origem, só não podem existir múltiplas transações com o mesmo par estado de origem e estado final, logo é a opção **D**.
+
+### 15.
+
++ ***Builder***: não demos este design pattern
++ ***Strategy***: definir uma família de algoritmos, encapsula-los e torna-los *interchangeable*.
++ ***Template Method***: não demos este design pattern
++ ***Composite***: decompor objetos em estruturas em árvore para fazer hierarquias.
+
+Logo é a opção **B**.
+
+### 16.
+
+O modo do herói altera-se dependendo do estado deste, logo o padrão de desenho utilizado é o state (opção **A**).
+
+### 17.
+
+Está a ser criada uma hierarquia decompondo o objeto Window, logo está a ser utilizado o padrão de desenho composite (opção **D**).
+
+### 18.
+
+**Refactoring**: alterações feitas ao código para o tornar mais compreensível e fácil de manipular, sem se alterar as suas funionalidades.
+
+Logo é a opção **B**.
+
+### 19.
+
+***Extract Method***: agrupar fragmentos de código
+***Lazy Class***: classes que não fazem muito ao longo do programa
+
+De nenhuma maneira, agrupar fragmentos de código irá tornas uma classe mais "útil", logo é a opção **D**.
+
+### 20.
+
+````java
+public class Pessoa {
+    private String n1; // primeiro nome
+    private String n2; // ultimo nome
+    private String aux;
+    private int i; // idade
+
+    public String toString(){
+        aux = n1 + " " + n2;
+        return "nome completo: " + aux + " idade: " + i;
+    }
+
+    public String getFullName(){
+        aux = n1 + " " + n2;
+        return aux;
+    } ...
+}
+````
+
++ Existe código duplicado (a toString() podia invocar a getFullName())
++ A variável aux é desnecessária
++ Os comentários são desnecessários porque através das funções percebe-se a que é que cada variável se refere.
+
+Por exclusão de partes é a opção **D**.
