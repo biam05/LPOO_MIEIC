@@ -1,14 +1,11 @@
 public class Ticket {
-    int number;
-    Concert concert;
+    protected int number;
+    protected Concert concert;
 
-    public Ticket(int number, Concert concert) throws InvalidTicket{
-        if(number >= 0) {
-            this.number = number;
-            this.concert = concert;
-        }else {
-            throw new InvalidTicket();
-        }
+    public Ticket(int number, Concert concert) throws InvalidTicket {
+        if(number <= 0) throw new InvalidTicket();
+        this.number = number;
+        this.concert = concert;
     }
 
     public int getNumber() {

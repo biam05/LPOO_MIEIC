@@ -70,6 +70,7 @@ public class TestCases {
     }
 
 
+
     @Test
     public void testEquals() {
         Concert concert1 = new Concert("Paris", "France", "2019/10/10");
@@ -86,6 +87,7 @@ public class TestCases {
         Concert concert5 = new Concert("New York", "USA", "2019/05/20");
         assertEquals(concert4, concert5);
     }
+
 
     @Test 
     public void testSet() {

@@ -1,28 +1,22 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Band extends Act {
-
-    List<Artist> artists;
+    protected ArrayList<Artist> artists;
 
     public Band(String name, String country) {
         super(name, country);
         this.artists = new ArrayList<>();
     }
 
-    public List<Artist> getArtists() {
+    public ArrayList<Artist> getArtists() {
         return artists;
     }
 
-    public void addArtist(Artist artist) {
+    public void addArtist(Artist artist){
         artists.add(artist);
     }
 
-    public boolean containsArtist(Artist artist) {
-        for(Artist a : artists){
-            if(a.equals(artist))
-                return true;
-        }
-        return false;
+    public boolean containsArtist(Artist artist){
+        return artists.contains(artist);
     }
 }
