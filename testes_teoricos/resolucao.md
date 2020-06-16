@@ -2,6 +2,7 @@
 
 # Índice
 1. [2016/2017](#2016/2017)
+2. [2015/2016](#2015/2016)
 
 ## 2016/2017
 
@@ -129,11 +130,11 @@ Logo a opção correta é a **B**.
 
 ### 13.
 
-Não demos esta matéria.
+Não demos esta matéria. (**A**).
 
 ### 14.
 
-Não demos esta matéria.
+Não demos esta matéria. (**C**).
 
 ### 15.
 
@@ -200,17 +201,200 @@ O *Duplicated Method* pode ser melhorado utilizando vários *refactorings*:
 
 Logo é a opção **B**.
 
+## 2015/2016
 
+### 1.
 
+Tipos primitivos de Java:
 
++ ``byte``
++ ``char``
++ ``short``
++ ``int``
++ ``long``
++ ``float``
++ ``double``
++ ``boolean``
++ ``void``
 
+Por exclusão de partes, é a opção **C**.
 
+### 2.
 
+O método ``compareTo`` está definido para a interface ``Comparable``. Os restantes métodos estão definidos para todos os objetos, logo é a opção **B**.
 
+### 3.
 
+````java
+public class C1 {
+    public String f() {return"1";}
+    public String g() {return"1";}
+    public void print() {System.out.println(f() + g());}  
+}
+public class C2 extends C1 {
+    public String f() {return"2";}
+    public String g() {return"2";}  
+}  
+C1 obj = new C2();
+obj.print();
+````
 
+Como utiliza o construtor de ``C2``, irá utilizar os métodos deste, logo irá imprimir "22", sendo, assim, a opção **E**.
 
+### 4.
 
+*Keywords* do tratamento de exceções em Java:
 
++ ``try``
++ ``throw``/``throws``
++ ``catch``
++ ``finally``
 
+Por exclusão de partes, ``fail`` não é uma *keyword* no tratamento de exceções em Java logo é a opção **B**.
 
+### 5. 
+
+Boas práticas e ferramentos dos testes unitários:
++ As ferramentas de teste de mutação como PIT são úteis para avaliar a qualidade dos testes pois introduzem mutações no código e verificam se os testes são capazes de eliminar as mutações introduzidas.
++ Não demos o EclEmma
++ Em JUnit 4 os métodos de teste são anotados com ``@Test``.
++ Em JUnit 4, os valores retornados pelos métodos invocados a partir do código de teste são normalmente verificados através do método ``assertEquals``.
+
+Por exclusão de partes, é a opção **B**.
+
+### 6.
+
+Lista ordenada de projetos preferidos por cada estudante
+
++ Estudantes não precisam de estar ordenados, mas sim os projetos preferidos por estes, logo tem de ser uma estruta que elimina duplicados em que o valor da chave estudante é uma estrutura que elimina duplicados e esta ordenada.
+
+````java
+HashMap<Estudante, TreeSet<Projeto>>
+````
+
+Logo, é a opção **E**.
+
+### 7.
+
+Não demos esta matéria. (**E**)
+
+### 8.
+
+Não demos esta matéria. (**A**)
+
+### 9.
+
+Não demos esta matéria. (**E**)
+
+### 10.
+
+Não demos esta matéria. (**E**)
+
+### 11.
+
+Não demos esta matéria. (**C**)
+
+### 12.
+
+Não demos esta matéria. (**E**)
+
+### 13.
+
+Não demos esta matéria. (**D**)
+
+### 14.
+
++ C2 implementa a interface I1
++ C1 é a superclasse de C2
++ C2 tem um atributo privado de C4 de nome r4
++ C2 tem um atributo privado de C3 de nome r3
+
+````java
+class C2<T> implements I1 extends C1{ private Set<C3> r3, private C4 r4;}
+````
+
+Logo é a opção **B**.
+
+### 15.
+
+Num diagrama de estados UML, numa transição, é indicado o evento em que se encontra atualmente, uma condição que é necessário acontecer e a ação que é tomada quando essa condição se verifica, logo é a opção **B**.
+
+### 16.
+
+Diagramas de sequência UML:
+
++ Linhas de Vida
++ Axis
++ Atores
++ Mensagens
++ Fragmentos Combinados
++ *Frames*
++ *Gates*
++ Referências
+
+Por exclusão de partes, é a opção **A**.
+
+### 17.
+
+Dependendo do estado em que se encontra o programa, o dragão terá diferentes ações, logo é o State Pattern (opção **C**).
+
+### 18.
+
+````java
+public abstract class C {
+    public abstract void f();
+    public abstract void g();
+    public void h() {f(); g();}}
+````
++ ***Composite***: decompor objetos em estruturas em árvore para fazer hierarquias.
++ ***Visitor***: não demos este design pattern (mas não parece que seja isso...)
++ ***Strategy***: definir uma família de algoritmos, encapsula-los e torna-los *interchangeable*. 
+
+O Template Method não foi abordado este ano, no entando, por exclusão de partes, é esta a opção (**B**).
+
+### 19.
+
+````java
+public class Game{
+    ...
+    public boolean moveHero(Direction move){
+        if(move == Direction.UP){ // move up
+            int newPosX = hero.getX();
+            int newPosY = hero.getY() - 1;
+            hero.setCoord(newPosX, newPosY);
+            return true;
+        }
+        if(move == Direction.LEFT){ // move left
+            int newPosX = hero.getX() - 1;
+            int newPosY = hero.getY();
+            hero.setCoord(newPosX, newPosY);
+            return true;
+        }
+    }
+}
+````
+
++ Comentários desnecessários (percebe-se que é mexer para cima e para a esquerda pelo código)
++ Há código duplicaodo:
+````java
+hero.setCoord(newPosX, newPosY);
+return true;
+````
++ Não existem variáveis temporarias
++ Utilizam-se mais as feature do Hero do que as do próprio Game
+
+Logo a resposta é a **C**.
+
+### 20.
+
+````java
+public class Game{
+    ...
+    public boolean equalPositions(Position p1, Position p2){
+        return p1.getY() == p2.getY() && p1.getX() == p2.getX();
+    }
+    ...
+}
+````
+
+O código apresentado devia presentar a classe Position, por exemplo dar override do método equals para comparar as duas posições, logo é a opção **D**.
