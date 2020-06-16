@@ -1,10 +1,11 @@
 # Resolução Testes Teóricos (2019/2020)
 
-# Índice
+## Índice
 1. [2016/2017](#20162017)
 2. [2015/2016](#20152016)
 3. [2014/2015](#20142015)
 4. [2012/2013](#20122013)
+5. [2011/2012](#20112012)
 
 ## 2016/2017
 
@@ -721,5 +722,128 @@ public class Customer{
 }
 ````
 
+A classe Customer utiliza muito as funções da classe mobilePhone, sendo este o *code smell* *Feature Envy* (opção **A**).
 
+## 2011/2012
 
+### 1.
+
++ Associação navegável: traço não tracejado/seta não tracejada
++ Concretização: seta tracejada com um triângulo branco
++ Generalização: seta não tracejada com um triângulo branco
++ Dependência: seta tracejada
+
+Logo é a opção **D**
+
+### 2.
+
+A relação de concretização permite relacionar classes com interfaces (opção **C**).
+
+### 3.
+
+Os membros estáticos em diagramas de classes UML são representados com sublinhado (opção **B**).
+
+### 4.
+
++ C1 tem um atributo privado composto por varias variáveis do tipo C2 (List) do nome a2.
++ C2 tem um atributo privado do tipo C1 de nome a1;
+
+````java
+class C1{ private List<C2> a2;}
+class C2{ private C1 a1;}
+````
+
+Logo é a opção **C**.
+
+### 5.
+
+Os diagramas de sequência ilustram a interação entre objetos numa ordem sequencial de acontecimentos, logo é a opção **C**.
+
+### 6.
+
+Os Atores, classes e as suas instâncias podem ter linhas de vida (representam um participante individual numa interação, logo têm de ser objetos que possam interagir) (opção **B**).
+
+### 7.
+
+m1 m3 m5 m6 não é possível porque se tem m3 tem de ter m4 logo é a opção **C**.
+
+### 8. 
+
+O diagrama C não está correto porque Class 2 tem de ser definida como ob2: Class2.
+O diagrama A está correto.
+
+Logo, por exclusão de partes, é a opção **C**.
+
+### 9.
+
+As transições têm de ter um *trigger*, uma condição de guarda e um efeito, logo é a opção **A**.
+
+### 10.
+
+Nos diagramas de estados UML, estados compostos (com subestados sequenciais) são úteis para evitar a explosão combinatória de transições (explosão combinatória de estados é com os ortogonais) (opção **A**).
+
+### 11.
+
+Nos diagramas de estados UML são aceitos como eventos as chamadas de operações e eventos temporais (tipo o fim de alguma tarefa, por exemplo), logo é a opção **D**.
+
+### 12.
+
+C é diferente de A porque A aceita varias transições e2 seguidas e C não.
+Os restantes são iguais a A, logo a opção é a **C**.
+
+### 13.
+
++ ***Strategy***: definir uma família de algoritmos, encapsula-los e torna-los *interchangeable*. 
+
+Logo é a opção **B**.
+
+### 14.
+
++ ***Factory Method***: define uma interface para criar objetos mas deixa as subclasses decidirem que classe devem instanciar.
+
+Logo é a opção **D**.
+
+### 15.
+
++ ***Composite***: decompor objetos em estruturas em árvore para fazer hierarquias.
+
+Como as classes Node e Leaf são subclasses de TreeElement, é a opção **C**.
+
+### 16.
+
+Não demos em pormenor o design pattern Template Method mas por exclusão de partes é a opção **B**.
+
+### 17.
+
+O refactoring só deve ser feito quando as implementações já estão todas concluidas, logo é a opção **D**.
+
+### 18.
+
+````java
+double getSpeed() {
+    switch (_type) {
+        case EUROPEAN:
+            return getBaseSpeed();
+        case AFRICAN:
+            return getBaseSpeed() -getLoadFactor() * _numberOfCoconuts;       
+        case NORWEGIAN_BLUE:
+            return (_isNailed) ? 0 : getBaseSpeed(_voltage);     
+    } throw new RuntimeException ("Should be unreachable");
+}
+````
+
+De forma a tornar o código mais fácil de compreender, deveria retirar-se o switch e utilizar polimorfismo, logo é a opção **C**.
+
+### 19.
+
+***Extract Method***: agrupar fragmentos de código
+
+*Can be used to eliminate: **Duplicate Code, Long Method, Feature Envy, Switch Statements,Message Chains, Comments** and **Data Class***
+
+Opção **A**/**B**
+
+### 20.
+
+Os atributos não devem ser públicos (Encapsulate Field).
+
+Logo é a opção **C**.
