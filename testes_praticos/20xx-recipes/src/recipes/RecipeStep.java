@@ -1,18 +1,17 @@
 package recipes;
 
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class RecipeStep extends Ingredient {
     protected String action;
-    protected HashMap<Ingredient, Float> ingredients;
+    protected TreeMap<Ingredient, Float> ingredients;
 
     public RecipeStep(String name, String action) throws IllegalArgumentException {
         if(name == null || action == null) throw new IllegalArgumentException();
         this.name = name;
         this.action = action;
-        this.ingredients = new HashMap<Ingredient, Float>();
+        this.ingredients = new TreeMap<Ingredient, Float>();
     }
 
     public String getAction() {
@@ -31,14 +30,10 @@ public class RecipeStep extends Ingredient {
         double total = 0f;
         for (Map.Entry<Ingredient, Float> entry : this.ingredients.entrySet()) {
             if(entry.getKey() instanceof RecipeStep){
-                if(entry.getKey().equals(ingredient))
-                    total += entry.getValue();
                 total += entry.getValue() * ((RecipeStep) entry.getKey()).getQuantity(ingredient);
             }
-            else{
-                if(entry.getKey().equals(ingredient))
-                    total += entry.getValue();
-            }
+            if(entry.getKey().equals(ingredient)) total += entry.getValue();
+
         }
         return total;
     }
