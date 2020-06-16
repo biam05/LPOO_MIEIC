@@ -400,7 +400,7 @@ public class Game{
 }
 ````
 
-O código apresentado devia presentar a classe Position, por exemplo dar override do método equals para comparar as duas posições, logo é a opção **D**.
+O código apresentado devia encontrar-se na classe Position pois usa os métodos da classe Position e nenhum método da classe Game logo é a opção **A**.
 
 ## 2014/2015
 
